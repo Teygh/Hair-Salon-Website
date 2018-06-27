@@ -1,0 +1,215 @@
+{{>navbar/nav}}
+
+<script type="text/javascript" src="/assets/js/about_page.js"></script>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>About</h1>
+        <p class="lead">Thanks for stopping by. Read more about us and where to find us.</p>
+    </div>
+</div>
+
+<div>
+    <div class="container" id="overview">
+        <p class="lead">
+            We love hair and we love to educate. Our stylists are busy slaying hair at the salon for for the runway. Checkout our editorials
+            section to see the latest shows we've worked.
+        </p>
+    </div>
+</div>
+
+<div class="background-color1">
+    <div class="sectionRow" id="history">
+        <div class="card-group">
+            <div class="card sectionBody">
+                <div class="card-body">
+                    <h5 class="card-title sectionTitle">History</h5>
+                    <p class="card-text">
+                        After years of working as a stylist and makeup artist, Kelly Smith founded House of Style in 2015. Kelly has welcomed stylists
+                        to join the House of Style.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="background-color1">
+    {{!-- Blank for picture --}}
+    <div id="placeholder1" class="container">
+        <div class="clearing">
+        </div>
+    </div>
+</div>
+
+{{#if TopProviders}}
+<div class="background-color1">
+    <div class="sectionRow sectionBody" id="featuredStylist1">
+        <h5>Featured Stylists</h5>
+        {{#each TopProviders}}
+        <div class="card-group">
+            <div class="card col-6">
+                <img class="card-img-top" src="{{photoLink}}" alt="Stylist 1 Pic">
+            </div>
+            <div class="card col-6">
+                <div class="card-body">
+                    <h5 class="card-title">{{firstName}} {{lastName}}</h5>
+                    <p class="card-text">{{notes}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{title}}</li>
+                    <li class="list-group-item">{{email}}</li>
+                    <li class="list-group-item">{{phone}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="break"></div>
+        {{/each}}
+    </div>
+</div>
+{{/if}} {{!--
+<div class="background-color1">
+    <div class="sectionRow sectionBody" id="featuredStylist1">
+        <h5>Featured Stylists</h5>
+        <div class="card-group">
+            <div class="card col-6">
+                <img class="card-img-top" id="stylist1_pic" src="..." alt="Stylist 1 Pic">
+            </div>
+            <div class="card col-6">
+                <div class="card-body">
+                    <h5 class="card-title" id="stylist1_name"></h5>
+                    <p class="card-text" id="stylist1_bio"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" id="stylist1_title"></li>
+                    <li class="list-group-item" id="stylist1_email"></li>
+                    <li class="list-group-item" id="stylist1_phone"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="break"></div>
+<div class="background-color1">
+    <div class="sectionRow sectionBody" id="featuredSytlist2">
+        <div class="card-group">
+            <div class="card col-6">
+                <img class="card-img-top" id="stylist2_pic" src="..." alt="Stylist 1 Pic">
+            </div>
+            <div class="card col-6">
+                <div class="card-body">
+                    <h5 class="card-title" id="stylist2_name"></h5>
+                    <p class="card-text" id="stylist2_bio"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" id="stylist2_title"></li>
+                    <li class="list-group-item" id="stylist2_email"></li>
+                    <li class="list-group-item" id="stylist2_phone"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+<div class="background-color1">
+    {{!-- Blank for picture --}}
+    <div id="placeholder2" class="container">
+        <div class="clearing2">
+        </div>
+    </div>
+</div>
+
+<div class="background-color1">
+    <div class="sectionRow sectionBody" id="partners">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Editorial Work</h5>
+                    <p> New York Fashion Week </p>
+                    <p> Joico World Conference </p>
+                    <p> Getty Images </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="background-color1">
+    {{!-- Blank for picture --}}
+    <div id="placeholder4" class="container">
+        <div class="clearing4">
+        </div>
+    </div>
+</div>
+
+<div class="background-color1">
+    <div class="sectionRow sectionBody" id="contact">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Find Us</h5>
+                    <p class="card-text">18301 Egret Bay Blvd, Suite 1
+                        <br> Webster, Texas</p>
+                    <p class="card-text">
+                        <small class="text-muted"></small>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i> (832) 390-5555</p>
+                    <p>
+                        <i class="fab fa-facebook-square"></i> @kellyshouseofstyle</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Hours</h5>
+                    <table class="hours">
+                        <tr>
+                            <td class="card-text hours">Mon: </td>
+                            <td>Closed
+                                <td></td>
+                        </tr>
+                        <tr>
+                            <td class="card-text hours">Tue: </td>
+                            <td>By appointment
+                                <td></td>
+                        </tr>
+                        <tr>
+                            <td class="card-text hours">Wed: </td>
+                            <td>10-6</td>
+                        </tr>
+                        <tr>
+                            <td class="card-text hours">Thu: </td>
+                            <td>10-6</td>
+                        </tr>
+                        <tr>
+                            <td class="card-text hours">Fri: </td>
+                            <td>10-6</td>
+                        </tr>
+                        <tr>
+                            <td class="card-text hours">Sat: </td>
+                            <td>10-6</td>
+                        </tr>
+                        <tr>
+                            <td class="card-text hours">Sun: </td>
+                            <td>Closed
+                                <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3471.0580032322196!2d-95.10472943338627!3d29.5438050910544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86409cfd06df5b41%3A0x610eecda03c0ec58!2s18301+Egret+Bay+Blvd+%231%2C+Houston%2C+TX+77058!5e0!3m2!1sen!2sus!4v1526618537426"
+                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+{{>footer}}

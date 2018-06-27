@@ -1,0 +1,33 @@
+<button class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        {{firstName}} {{lastName}}
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+     {{!--   {{#if admin}} {{>navbar/user-options/admin}} {{else}} {{>navbar/user-options/customer}} {{/if}} --}}
+
+
+
+
+ {{>navbar/user-options/admin}}
+
+
+{{>navbar/user-options/customer}} 
+
+        {{!-- Both customers and admins should have these options --}}
+            {{!-- In settings users/admins should be able to update their personal information (email; passsword; phone number; name; etc)
+                    Admins should have more options 
+                    ***If you console.log(req.user) you'll find all the user information in the console just add what you need from there to the viewBuilder object in contollers/routes--}}
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" data-toggle="modal" data-target="#userSettingsModal">User Settings</a>
+
+        {{!-- Here for MPV 2 --}}
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" data-toggle="modal" data-target="#messagesModal">Messages {{messageCount}}</a>
+
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href='/logout'>Log out</a>
+    </div>
+</button>

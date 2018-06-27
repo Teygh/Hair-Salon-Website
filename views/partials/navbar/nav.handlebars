@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-12 d-flex justify-content-end">
+        {{#if LoggedIn}} {{>navbar/nav-user}} {{else}} {{>navbar/nav-login}} {{/if}}
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg" id="navbar-hover">
+    <div class="d-flex justify-content-center" id="navLinks">
+
+
+        <div class="col-4" id="navSiteLinks">
+            <ul class="navbar-nav mr-auto">
+
+
+
+                {{#if LoggedIn}}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{homeRoute}}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{aboutRoute}}">About</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                {{/if}}
+
+            </ul>
+        </div>
+
+        <div class="col-4" id="navTitle">
+            <a class="navbar-brand" href="/">
+                <img id="nav-logo" src="/assets/images/nav_logo.jpg" alt="House of Style Logo">
+                <img id="nav-logo-sm" src="/assets/images/nav_logo-sm.jpg" alt="House of Style Logo">
+            </a>
+        </div>
+        <div class="col-4" id="navSiteLinks">
+            <ul class="navbar-nav mr-auto">
+                {{#if LoggedIn}}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{serviceRoute}}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{scheduleRoute}}">Book</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/service">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/schedule">Book</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+{{!-- Log in Modal --}}
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        {{>navbar/modal/login-modal}}
+
+    </div>
+</div>
+
+{{!-- Signup Modal --}}
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        {{>navbar/modal/signup-modal}}
+
+    </div>
+
+</div>
+
+{{!-- User Settings Modal --}}
+
+<div class="modal fade" id="userSettingsModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        {{>navbar/modal/userSettings-modal}}
+
+    </div>
+
+</div>
+
+{{!-- Admin Add/Edit Provider Modal --}}
+<div class="modal fade" id="providerModal" tabindex="-1" role="dialog" aria-labelledby="providerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        {{>navbar/modal/provider-modal}}
+
+    </div>
+</div>
+
+{{!-- Admin Add/Edit schedule Modal --}}
+<div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        {{>navbar/modal/schedule-modal}}
+
+    </div>
+</div>
+{{!-- Admin Add/Edit Service Modal --}}
+<div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        {{>navbar/modal/service-modal}}
+
+    </div>
+</div>

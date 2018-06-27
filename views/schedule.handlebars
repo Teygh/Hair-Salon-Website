@@ -1,0 +1,122 @@
+{{>navbar/nav}} {{!-- First selected the type of service --}} {{!-- Second selected the sytlist based on those that perform
+that service --}} {{!-- Third user selects day from calendar --}} {{!-- Fouth user selects time from appointment picker --}}
+{{!-- All of these are stored in appointment table --}}
+<link rel="stylesheet" href="/assets/css/appointment-picker.css">
+
+
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Schedule</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="background-color1">
+    <form id="appointmentForm" onsubmit="return false">
+      Book your next appointment
+      <div class="form-row"> 
+
+        <div class="form-group col-md-4">
+          <input name="customer_id" value={{userId}} hidden>
+          <!-- Select Service Dropdown -->
+          <label id="serviceSchedLabel" class="scheduleLabels"for="serviceChoice">Select Service</label>
+
+
+          <select id="serviceChoice" class="form-control">
+            <option disabled selected hidden> Services</option>
+            {{#each service_names}}            
+            <option data-service-name = "{{name}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <div class="form-group col-md-4">
+          <!-- Select Stylist Dropdown -->
+
+          <label id="providerSchedLabel" class="scheduleLabels" for="providerChoices" data-toggle="tooltip" data-placement="left" title="Please select a service to enable this selection">Select Stylist</label>
+          
+          <select id="providerChoices" class="form-control" disabled>
+
+            <option selected> Any </option>
+      
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row col-md-4">
+
+        <div class="form-group" id="dateGroup">
+          <label id="dateSchedLabel" class="scheduleLabels" for="date" data-toggle="tooltip" data-placement="left" title="Please select a sylist to enable this selection">Choose a date to see avaiable times</label>
+        
+          <input type='text' name = 'date' id="datepicker">
+        </div>
+
+        <div class="form-group">
+          <label id="timeSchedLabel" class="scheduleLabels" for="time-2" data-toggle="tooltip" data-placement="left" title="Please select a date to enable this selection">Select a Time</label>
+
+          <input id="time-2" type="text" disabled>
+        </div>
+      </div>
+
+      <button id="submitAppointment" type='submit' class="btn btn-primary" data-toggle="modal" data-target='#Review'disabled>Book!</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+{{!-- Appointment Review Modal --}}
+
+<div class="modal fade" id="Review" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentReview">Review Your Appointment Choices</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action='/appointment/new/' name="appointment_form">
+          <div class="form-group">
+            <input name='customerID' value="{{userId}}" hidden>
+            <input name='endTime' id="inputTheEnd" hidden>
+          </div>
+          <div class="form-group">
+            <label class="scheduleLabels"for="inputServiceChosen">Service Chosen</label>
+            <input type="text" class="form-control" name="service_name" id="inputServiceChosen" >
+          </div>
+          <div class="form-group">
+            <label class="scheduleLabels"for="inputProviderChosen">Provider Chosen</label>
+            <input type="text" class="form-control" name="provider_name" id="inputProviderChosen" >
+            <input name="provider_id" id="provId" hidden>
+          </div>
+          <div class="form-group">
+            <label class="scheduleLabels"for="inputStart">Day Chosen</label>
+            <input name="scheduleID" id="schedId" hidden>
+            <input type="text" class="form-control" name="day" id="inputDayChosen" >
+          </div>
+          <div class="form-group">
+            <label class="scheduleLabels"for="inputTime">Time Chosen</label>
+            <input type="text" class="form-control" id="inputTimeChosen" name="time">
+            <input type='text' name="startTime" id="startTime" hidden>
+            <input name="duration" id='duration' hidden>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+{{>footer}}
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --}}
+{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> --}}
+<script src="/assets/js/datepicker.js"></script>
+<script src="/assets/js/schedule_appt.js"></script>
+<script src="/assets/js/appointment-picker.js"></script>

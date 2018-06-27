@@ -1,0 +1,56 @@
+<div class="modal-content" id="newServiceModal">
+    <div class="modal-header">
+        <h5 class="modal-title" id="serviceModalLabel">Add a new Service</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form name="service_form">
+            <div class="form-group" id="providerPick">
+                <!-- Select Stylist Dropdown -->
+                <label for="providerChoice">Select Provider</label>
+                <select id="providerChoice2" class="form-control">
+                    {{!-- {{#each provider_names}} --}}
+                    <option selected> Select Provider</option>
+                </select>
+            </div>
+            <div class="form-group">
+                {{!-- category --}}
+                <label for="inputService">Category</label>
+
+                <input type="text" class="form-control" id="inputServiceCategory" placeholder="Cut" required>
+
+            </div>
+            <div class="form-group">
+                {{!-- service name --}}
+                <label for="inputStart">Service Name</label>
+                <input type="text" class="form-control" id="InputServiceName" placeholder="Kids Cut and Style" required>
+            </div>
+            <div class="form-group">
+                {{!-- description --}}
+                <label for="inputEnd">Descripton</label>
+                <input type="text" class="form-control" id="inputServiceDescription" placeholder="Kids Hair" required>
+            </div>
+            <div class="form-group">
+                {{!-- duration --}}
+                <label for="InputServiceDuration">Duration </label>
+                <input width="40%" type="time" class="form-control" id="inputServiceDuration" placeholder="00:30:00" required>
+
+            </div>
+            <div class="form-group">
+                {{!-- price --}}
+                <label for="InputRepeat">Price ($)</label>
+                <input type="number" class="form-control" id="inputServicePrice" placeholder="65" required>
+            </div>
+            <div class="form-group">
+                {{!-- photolinks --}}
+                <label for="InputRepeat">Photolink</label>
+                <input type="text" class="form-control" id="inputServicePhoto" placeholder="assets/images/services/cut_child.jpg">
+            </div>
+            <button id="addNewService" type="button" class="btn btn-primary">Add Service</button>
+        </form>
+    </div>
+</div>
+
+{{!-- name, description, duration, price, photolink(s) --}}

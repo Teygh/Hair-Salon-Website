@@ -1,0 +1,42 @@
+{{>navbar/nav}}
+
+
+
+
+
+<div class="background-color1 providerpage">
+    <div class="container sectionRow" id="calendar">
+        Calendar
+    </div>
+    <div class="break"></div>
+</div>
+
+<div class="background-color1">
+    <div class="container " id="customer{{1}}">
+        Customers
+        <div class="row">
+            {{#if Customers}} {{#each Customers}}
+            <div class="customer_info">
+                <button type="button" class="btn btn-light login my-2 my-sm-0" data-toggle="modal" data-target="{{customer.modalID}}"> {{customer.firstName}} {{customer.lastName}}
+                </button>
+                <div class="modal fade" id="{{customer.ModalID}}" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+
+                        {{>navbar/modal/admin-Update-Customer}}
+
+                    </div>
+
+                </div>
+            </div>
+            {{/each}} {{/if}}
+            <div class="break"></div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+{{>footer}}

@@ -1,0 +1,13 @@
+Table 1 - Providers (Employees).
+-- Notes:
+-- We need a page to Enter the the details for the employees (Providers)
+-- This page is only accessable to the Admin (How to do this????)
+
+
+Table 2 - Services
+
+-- We need to have a page to Enter the services that the salon has, Also it needs to be tied to one of the 
+    providers, basically a drop down menu with a list of the names of the providers.
+-- If we can somehow be able to select multiple providers that give that service and not have to do for each seperately 
+    would save alot of time.
+© 2018 GitHub, Inc.
